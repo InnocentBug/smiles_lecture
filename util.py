@@ -36,3 +36,7 @@ def moltosvg(mol, molSize=(450, 150), kekulize=False):
     drawer.FinishDrawing()
     svg = drawer.GetDrawingText()
     return svg
+
+
+def render_mol(mol, **kwargs):
+    return render_svg(moltosvg(mol, **kwargs))
