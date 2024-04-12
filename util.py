@@ -2,13 +2,14 @@ import numpy as np
 from rdkit import Chem
 from rdkit.Chem.Draw import IPythonConsole
 from IPython.display import SVG
-import pydot
 
 from rdkit.Chem import rdDepictor
 from rdkit.Chem.Draw import rdMolDraw2D
+import requests
 
 import bigsmiles_gen
 from bigsmiles_gen import System, mol_prob, Molecule, System
+from urllib.parse import quote
 
 
 def render_svg(svg):
@@ -40,3 +41,8 @@ def moltosvg(mol, molSize=(450, 150), kekulize=False):
 
 def render_mol(mol, **kwargs):
     return render_svg(moltosvg(mol, **kwargs))
+
+def get_iupac_name(smiles):
+    url = f"https://cactus.nci.nih.gov/chemical/structure/{smiles}/iupac_name"
+    response = requests.get(url)
+    return response.text

@@ -2,3 +2,5 @@ rdkit==2023.09.5
 bigsmiles_gen @ git+https://github.com/InnocentBug/bigSMILESgen@main
 notebook==7.0.6
 selfies @ git+https://github.com/aspuru-guzik-group/selfies@master
+requests
+urllib
