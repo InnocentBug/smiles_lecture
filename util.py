@@ -41,5 +41,5 @@ def render_mol(mol, **kwargs):
 
 def get_iupac_name(smiles):
     url = f"https://cactus.nci.nih.gov/chemical/structure/{quote(smiles)}/iupac_name"
-    response = requests.get(url, timeout=1)
+    response = requests.get(url, timeout=11)
     return response.text
