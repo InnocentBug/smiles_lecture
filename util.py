@@ -26,8 +26,7 @@ def moltosvg(mol, molSize=(450, 150), kekulize=False):
         except Exception as exc:
             mc = Chem.Mol(mol.ToBinary())
             print(exc)
-    if not mc.GetNumConformers():
-        rdDepictor.Compute2DCoords(mc)
+    rdDepictor.Compute2DCoords(mc)
     drawer = rdMolDraw2D.MolDraw2DSVG(molSize[0], molSize[1])
     drawer.DrawMolecule(mc)
     drawer.FinishDrawing()
