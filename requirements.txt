@@ -1,6 +1,5 @@
 rdkit==2023.09.5
 bigsmiles_gen @ git+https://github.com/InnocentBug/bigSMILESgen@main
-notebook==7.0.7
 selfies @ git+https://github.com/aspuru-guzik-group/selfies@master
 requests==2.31.0
-jupytext
+
